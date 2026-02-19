@@ -12,5 +12,14 @@ class Vehicle {
     }
 }
 
+final class Car: Vehicle {
+    let speed: Int
+    
+    init(name: String, price: Int, countInStock: Int, speed: Int) {
+        self.speed = speed
+        
+        super.init(name: name, price: price, countInStock: countInStock)
+    }
+}
 
 
