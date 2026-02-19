@@ -1,5 +1,7 @@
 import Foundation
 
+//  MARK: - CLASS
+
 class Vehicle {
     let name: String
     let price: Int
@@ -22,4 +24,14 @@ final class Car: Vehicle {
     }
 }
 
+//  MARK: - STRUCT
 
+struct User {
+    let name: String
+    let surname: String
+    let age: Int
+    
+    func tellAboutMe() -> [Any] {
+        return [name, surname, age]
+    }
+}
