@@ -12,6 +12,10 @@ class Vehicle {
         self.price = price
         self.countInStock = countInStock
     }
+    
+    var description: String {
+        return "Название: \(name), Цена: \(price)."
+    }
 }
 
 final class Car: Vehicle {
@@ -21,6 +25,14 @@ final class Car: Vehicle {
         self.speed = speed
         
         super.init(name: name, price: price, countInStock: countInStock)
+    }
+    
+    override var description: String {
+        return "Название: \(name), Цена: \(price). Скорость: \(speedDescription())."
+    }
+    
+    func speedDescription() -> String {
+        return "Скорость: \(speed) км/ч."
     }
 }
 
