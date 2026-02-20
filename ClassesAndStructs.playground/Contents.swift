@@ -2,7 +2,7 @@ import Foundation
 
 //  MARK: - CLASS
 
-class Vehicle {
+class Vehicle: CustomStringConvertible {
     let name: String
     let price: Int
     let countInStock: Int
@@ -28,13 +28,20 @@ final class Car: Vehicle {
     }
     
     override var description: String {
-        return "Название: \(name), Цена: \(price). Скорость: \(speedDescription())."
+        return "Название: \(name), Цена: \(price). Скорость: \(speed)."
     }
     
-    func speedDescription() -> String {
-        return "Скорость: \(speed) км/ч."
+    func speedForPrice() -> String {
+        return "Цена за километр в час: \(price / speed)"
     }
 }
+
+let newVehicle = Vehicle(name: "Cars", price: 1000000, countInStock: 10)
+print(newVehicle)
+
+let newCar = Car(name: "Ferrari", price: 1000000, countInStock: 10, speed: 320)
+print(newCar)
+print(newCar.speedForPrice())
 
 //  MARK: - STRUCT
 
@@ -47,6 +54,9 @@ struct User {
         return [name, surname, age]
     }
 }
+
+let newUser = User(name: "John", surname: "Davis", age: 25)
+print(newUser.tellAboutMe())
 
 //  MARK: - ENUM
 
