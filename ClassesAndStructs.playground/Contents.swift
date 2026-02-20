@@ -35,3 +35,45 @@ struct User {
         return [name, surname, age]
     }
 }
+
+//  MARK: - ENUM
+
+enum Phone {
+    case iPhone
+    case Samsung
+    case Microsoft
+    
+    enum iPhoneVersion: String {
+        case Air = "Air"
+        case Pro = "Pro"
+    }
+    
+    enum SamsungVersion: String {
+        case S = "S"
+        case Note = "Note"
+    }
+    
+    enum MicrosoftVersion: String {
+        case Surface = "Surface"
+        case Laptop = "Laptop"
+    }
+    
+    var title: String {
+        switch self {
+        case .iPhone:
+            return "iPhone 7"
+        case .Samsung:
+            return "Samsung Galaxy S7"
+        case .Microsoft:
+            return "Microsoft Lumia"
+        }
+    }
+}
+
+let firstPhone = Phone.MicrosoftVersion.Surface
+let secondPhone = Phone.iPhone.title
+let thirdPhone = Phone.Microsoft
+
+print(firstPhone)
+print(secondPhone)
+print(thirdPhone)
