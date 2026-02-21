@@ -1,5 +1,33 @@
 import Foundation
 
+//  MARK: - CLASSES WITH MEMORY LEAK
+
+final class Laptop {
+    var smartphone: Smartphone?
+    deinit {
+        print("\(self) is being deinitialized")
+    }
+}
+
+final class Smartphone {
+    var laptop: Laptop?
+    deinit {
+        print("\(self) is being deinitialized")
+    }
+}
+
+var newLaptop: Laptop?
+newLaptop = Laptop()
+
+var newSmartphone: Smartphone?
+newSmartphone = Smartphone()
+
+newLaptop?.smartphone = newSmartphone
+newSmartphone?.laptop = newLaptop
+
+newLaptop = nil
+newSmartphone = nil
+
 //  MARK: - CLASS
 
 class Vehicle: CustomStringConvertible {
