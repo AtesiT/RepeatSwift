@@ -28,6 +28,20 @@ newSmartphone?.laptop = newLaptop
 newLaptop = nil
 newSmartphone = nil
 
+//  MARK: - CLASS SINGLETON
+
+final class NetworkManager {
+    static let shared = NetworkManager()
+    
+    let name = "The Singleton"
+    
+    private init() {}
+    
+    func checkConnection() -> String {
+        return "Connection is established"
+    }
+}
+
 //  MARK: - CLASS
 
 class Vehicle: CustomStringConvertible {
@@ -165,3 +179,4 @@ enum Fruits: Int {
 
 let firstFruits = Fruits(rawValue: 20)
 print(firstFruits ?? "Nothing")
+
