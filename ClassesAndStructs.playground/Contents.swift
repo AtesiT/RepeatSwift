@@ -99,3 +99,31 @@ let thirdPhone = Phone.Microsoft
 print(firstPhone)
 print(secondPhone)
 print(thirdPhone)
+
+//  MARK: - ENUM (Version 2)
+
+enum Vegetables {
+    case Tomato(quality: TheQuality)
+    case Potato(quallity: TheQuality)
+    
+    enum TheQuality: CustomStringConvertible {
+        case fresh
+        case normal
+        case raw
+        
+        var description: String {
+            switch self {
+            case .fresh:
+                return "Свежий"
+            case .normal:
+                return "Обычный"
+            case .raw:
+                return "Сырой"
+            }
+        }
+    }
+}
+
+let firstVegetable = Vegetables.Potato(quallity: .raw)
+print(firstVegetable)
+
