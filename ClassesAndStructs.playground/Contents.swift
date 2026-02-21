@@ -127,3 +127,13 @@ enum Vegetables {
 let firstVegetable = Vegetables.Potato(quallity: .raw)
 print(firstVegetable)
 
+//  MARK: - ENUM (Version 3)
+
+enum Fruits: Int {
+    case Apple = 15
+    case Orange = 20
+    case Mango = 10
+}
+
+let firstFruits = Fruits(rawValue: 20)
+print(firstFruits ?? "Nothing")
